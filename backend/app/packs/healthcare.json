@@ -1,0 +1,126 @@
+{
+  "key": "healthcare",
+  "label": "Hospitals and clinics",
+  "record_type": "appointment",
+  "description": "Books and reschedules appointments, routes to departments, and hands emergencies to staff.",
+  "persona": "You are a calm, caring front-desk assistant for a hospital in India.",
+  "greeting": {
+    "en": "Hello, welcome to {company}. I'm {agent}, the virtual assistant. I can help you book an appointment. How may I help?",
+    "hi": "नमस्ते, {company} में आपका स्वागत है। मैं {agent} हूँ, वर्चुअल असिस्टेंट। अपॉइंटमेंट बुक करना हो तो मुझे बताइए।",
+    "gu": "નમસ્તે, {company} માં આપનું સ્વાગત છે. હું {agent} છું, વર્ચ્યુઅલ આસિસ્ટન્ટ. એપોઇન્ટમેન્ટ બુક કરવા માટે મને જણાવો."
+  },
+  "fields": [
+    {
+      "name": "name",
+      "label": "Patient name",
+      "type": "text",
+      "required": true,
+      "ask": {
+        "en": "May I know your name?",
+        "hi": "कृपया अपना नाम बताइए।",
+        "gu": "કૃપા કરીને તમારું નામ જણાવશો?"
+      }
+    },
+    {
+      "name": "department",
+      "label": "Department or doctor",
+      "type": "text",
+      "required": true,
+      "ask": {
+        "en": "Which department or doctor would you like to see?",
+        "hi": "आप किस विभाग या डॉक्टर से मिलना चाहेंगे?",
+        "gu": "તમે કયા વિભાગ અથવા ડૉક્ટરને મળવા માંગો છો?"
+      }
+    },
+    {
+      "name": "reason",
+      "label": "Reason for visit",
+      "type": "text",
+      "required": true,
+      "ask": {
+        "en": "In a few words, what is the visit for? This only helps the doctor prepare. I cannot give medical advice.",
+        "hi": "संक्षेप में बताइए, मिलने का कारण क्या है? यह केवल डॉक्टर की तैयारी के लिए है। चिकित्सा सलाह देना मेरे लिए संभव नहीं है।",
+        "gu": "ટૂંકમાં જણાવો, મુલાકાતનું કારણ શું છે? આ માત્ર ડૉક્ટરની તૈયારી માટે છે. તબીબી સલાહ આપવી મારા માટે શક્ય નથી."
+      }
+    },
+    {
+      "name": "preferred_time",
+      "label": "Preferred time",
+      "type": "text",
+      "required": true,
+      "ask": {
+        "en": "What day and time suits you?",
+        "hi": "आपके लिए कौन-सा दिन और समय ठीक रहेगा?",
+        "gu": "તમારા માટે કયો દિવસ અને સમય અનુકૂળ રહેશે?"
+      }
+    },
+    {
+      "name": "phone",
+      "label": "Phone",
+      "type": "phone",
+      "required": true,
+      "ask": {
+        "en": "Please tell me a phone number we can reach you on.",
+        "hi": "कृपया वह फ़ोन नंबर बताइए जिस पर हम आपसे संपर्क कर सकें।",
+        "gu": "કૃપા કરીને તમારો ફોન નંબર જણાવો જેના પર અમે સંપર્ક કરી શકીએ."
+      }
+    }
+  ],
+  "title_fields": [
+    "name",
+    "department"
+  ],
+  "closing": {
+    "en": "Thank you, {name}. Your appointment request is noted and our front desk will confirm it on your phone shortly. If this is urgent, please call the emergency line.",
+    "hi": "धन्यवाद {name}। आपका अपॉइंटमेंट अनुरोध दर्ज हो गया है और हमारा फ्रंट डेस्क जल्द ही आपके फ़ोन पर इसकी पुष्टि करेगा। यदि मामला आपातकालीन है तो कृपया इमरजेंसी लाइन पर कॉल करें।",
+    "gu": "આભાર {name}. તમારી એપોઇન્ટમેન્ટની વિનંતી નોંધાઈ ગઈ છે અને અમારું ફ્રન્ટ ડેસ્ક ટૂંક સમયમાં તમારા ફોન પર તેની પુષ્ટિ કરશે. જો આ તાત્કાલિક હોય તો કૃપા કરીને ઇમરજન્સી લાઇન પર કૉલ કરો."
+  },
+  "scoring": {
+    "fields": {
+      "name": 10,
+      "department": 25,
+      "reason": 25,
+      "preferred_time": 25,
+      "phone": 15
+    },
+    "complete": 0
+  },
+  "escalate": {
+    "en": [
+      "chest pain",
+      "emergency",
+      "bleeding",
+      "can't breathe",
+      "cannot breathe",
+      "unconscious",
+      "accident"
+    ],
+    "hi": [
+      "सीने में दर्द",
+      "इमरजेंसी",
+      "खून",
+      "सांस नहीं",
+      "साँस नहीं",
+      "बेहोश",
+      "एक्सीडेंट"
+    ],
+    "gu": [
+      "છાતીમાં દુખાવો",
+      "ઇમરજન્સી",
+      "લોહી",
+      "શ્વાસ",
+      "બેભાન",
+      "અકસ્માત"
+    ]
+  },
+  "handoff": {
+    "en": "This sounds urgent. Please call our emergency number or go to the nearest emergency room right now. I am connecting you to our staff.",
+    "hi": "यह गंभीर लग रहा है। कृपया तुरंत हमारे इमरजेंसी नंबर पर कॉल करें या नज़दीकी इमरजेंसी में जाएँ। आपको हमारे स्टाफ से जोड़ा जा रहा है।",
+    "gu": "આ ગંભીર લાગે છે. કૃપા કરીને તરત જ અમારા ઇમરજન્સી નંબર પર કૉલ કરો અથવા નજીકના ઇમરજન્સી વિભાગમાં જાઓ. તમને અમારા સ્ટાફ સાથે જોડવામાં આવી રહ્યા છે."
+  },
+  "rules": [
+    "Never diagnose, suggest medicines or interpret symptoms.",
+    "If the caller describes an emergency, transfer to staff immediately.",
+    "Collect only the details needed to book the appointment."
+  ]
+}

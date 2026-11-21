@@ -1,0 +1,97 @@
+{
+  "key": "education",
+  "label": "Education and admissions",
+  "record_type": "enquiry",
+  "description": "Answers course and fee questions, captures student details, and schedules counselor calls.",
+  "persona": "You are a friendly admissions assistant for an education institute in India.",
+  "greeting": {
+    "en": "Hello, welcome to {company}. I'm {agent}. I can help with admissions and course enquiries. What would you like to know?",
+    "hi": "नमस्ते, {company} में आपका स्वागत है। मैं {agent} हूँ। प्रवेश और कोर्स की जानकारी के लिए मुझसे पूछिए।",
+    "gu": "નમસ્તે, {company} માં આપનું સ્વાગત છે. હું {agent} છું. પ્રવેશ અને કોર્સની માહિતી માટે મને પૂછો."
+  },
+  "fields": [
+    {
+      "name": "name",
+      "label": "Student name",
+      "type": "text",
+      "required": true,
+      "ask": {
+        "en": "May I know your name?",
+        "hi": "कृपया अपना नाम बताइए।",
+        "gu": "કૃપા કરીને તમારું નામ જણાવશો?"
+      }
+    },
+    {
+      "name": "course",
+      "label": "Course",
+      "type": "text",
+      "required": true,
+      "ask": {
+        "en": "Which course are you interested in?",
+        "hi": "आप किस कोर्स में रुचि रखते हैं?",
+        "gu": "તમને કયા કોર્સમાં રસ છે?"
+      }
+    },
+    {
+      "name": "qualification",
+      "label": "Qualification",
+      "type": "text",
+      "required": true,
+      "ask": {
+        "en": "What is your latest qualification?",
+        "hi": "आपकी नवीनतम शैक्षणिक योग्यता क्या है?",
+        "gu": "તમારી તાજેતરની શૈક્ષણિક લાયકાત શું છે?"
+      }
+    },
+    {
+      "name": "counselor_time",
+      "label": "Callback time",
+      "type": "text",
+      "required": true,
+      "ask": {
+        "en": "When can our counselor call you?",
+        "hi": "हमारे काउंसलर आपको कब कॉल करें?",
+        "gu": "અમારા કાઉન્સેલર તમને ક્યારે કૉલ કરે?"
+      }
+    },
+    {
+      "name": "phone",
+      "label": "Phone",
+      "type": "phone",
+      "required": true,
+      "ask": {
+        "en": "Please tell me a phone number we can reach you on.",
+        "hi": "कृपया वह फ़ोन नंबर बताइए जिस पर हम आपसे संपर्क कर सकें।",
+        "gu": "કૃપા કરીને તમારો ફોન નંબર જણાવો જેના પર અમે સંપર્ક કરી શકીએ."
+      }
+    }
+  ],
+  "title_fields": [
+    "name",
+    "course"
+  ],
+  "closing": {
+    "en": "Thank you, {name}. A counselor will call you at your preferred time with fees, batches and next steps.",
+    "hi": "धन्यवाद {name}। हमारे काउंसलर आपके बताए समय पर फीस, बैच और आगे की प्रक्रिया के साथ कॉल करेंगे।",
+    "gu": "આભાર {name}. અમારા કાઉન્સેલર તમારા જણાવેલા સમયે ફી, બેચ અને આગળની પ્રક્રિયા સાથે કૉલ કરશે."
+  },
+  "scoring": {
+    "fields": {
+      "name": 10,
+      "course": 25,
+      "qualification": 15,
+      "counselor_time": 20,
+      "phone": 20
+    },
+    "complete": 10
+  },
+  "escalate": {
+    "en": [],
+    "hi": [],
+    "gu": []
+  },
+  "rules": [
+    "Do not promise admission, scholarships or placements.",
+    "Quote fees only from the knowledge base."
+  ]
+}

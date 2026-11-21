@@ -1,0 +1,109 @@
+{
+  "key": "real_estate",
+  "label": "Real estate and builders",
+  "record_type": "lead",
+  "description": "Qualifies property buyers, captures budget and location, and books site visits.",
+  "persona": "You are a courteous property consultant for a real estate developer in India.",
+  "greeting": {
+    "en": "Hello, this is {agent} from {company}. How can I help you with your property search today?",
+    "hi": "नमस्ते, {company} में आपका स्वागत है। मैं {agent} हूँ, आपका वर्चुअल असिस्टेंट। आज मैं आपकी कैसे सहायता करूँ?",
+    "gu": "નમસ્તે, {company} માં આપનું સ્વાગત છે. હું {agent} છું, તમારી વર્ચ્યુઅલ આસિસ્ટન્ટ. આજે હું તમારી કેવી રીતે મદદ કરી શકું?"
+  },
+  "fields": [
+    {
+      "name": "name",
+      "label": "Name",
+      "type": "text",
+      "required": true,
+      "ask": {
+        "en": "May I know your name?",
+        "hi": "कृपया अपना नाम बताइए।",
+        "gu": "કૃપા કરીને તમારું નામ જણાવશો?"
+      }
+    },
+    {
+      "name": "interest",
+      "label": "Property type",
+      "type": "text",
+      "required": true,
+      "ask": {
+        "en": "What type of property are you looking for, for example a 2 BHK flat, villa or plot?",
+        "hi": "आप किस तरह की प्रॉपर्टी ढूँढ रहे हैं, जैसे 2 BHK फ्लैट, विला या प्लॉट?",
+        "gu": "તમે કેવા પ્રકારની પ્રોપર્ટી શોધી રહ્યા છો, જેમ કે 2 BHK ફ્લેટ, વિલા કે પ્લોટ?"
+      }
+    },
+    {
+      "name": "budget",
+      "label": "Budget",
+      "type": "text",
+      "required": true,
+      "ask": {
+        "en": "What is your approximate budget?",
+        "hi": "आपका अनुमानित बजट कितना है?",
+        "gu": "તમારું અંદાજિત બજેટ કેટલું છે?"
+      }
+    },
+    {
+      "name": "location",
+      "label": "Preferred area",
+      "type": "text",
+      "required": true,
+      "ask": {
+        "en": "Which area or city would you prefer?",
+        "hi": "आप किस इलाके या शहर में लेना चाहेंगे?",
+        "gu": "તમે કયા વિસ્તાર અથવા શહેરમાં લેવા માંગો છો?"
+      }
+    },
+    {
+      "name": "timeline",
+      "label": "Buying timeline",
+      "type": "text",
+      "required": true,
+      "ask": {
+        "en": "When are you planning to buy?",
+        "hi": "आप कब तक खरीदने की योजना बना रहे हैं?",
+        "gu": "તમે ક્યારે ખરીદવાનું આયોજન કરી રહ્યા છો?"
+      }
+    },
+    {
+      "name": "visit_time",
+      "label": "Site visit time",
+      "type": "text",
+      "required": false,
+      "ask": {
+        "en": "When would you like to visit the site? For example, Saturday at 11 AM.",
+        "hi": "आप साइट विज़िट के लिए कब आना चाहेंगे? जैसे शनिवार सुबह 11 बजे।",
+        "gu": "તમે સાઇટ વિઝિટ માટે ક્યારે આવવા માંગો છો? જેમ કે શનિવારે સવારે 11 વાગ્યે."
+      }
+    }
+  ],
+  "title_fields": [
+    "name",
+    "interest"
+  ],
+  "closing": {
+    "en": "Thank you, {name}. I have noted your requirements and our property advisor will call you shortly. Have a great day!",
+    "hi": "धन्यवाद {name}। आपकी ज़रूरतें नोट कर ली गई हैं और हमारे प्रॉपर्टी सलाहकार जल्द ही आपको कॉल करेंगे। आपका दिन शुभ हो!",
+    "gu": "આભાર {name}. તમારી જરૂરિયાતો નોંધી લેવામાં આવી છે અને અમારા પ્રોપર્ટી સલાહકાર ટૂંક સમયમાં તમને કૉલ કરશે. તમારો દિવસ શુભ રહે!"
+  },
+  "scoring": {
+    "fields": {
+      "name": 5,
+      "interest": 15,
+      "budget": 25,
+      "location": 15,
+      "timeline": 25
+    },
+    "complete": 15
+  },
+  "escalate": {
+    "en": [],
+    "hi": [],
+    "gu": []
+  },
+  "rules": [
+    "Never quote a final price or promise discounts.",
+    "Do not share other customers' details.",
+    "For loan or legal questions, offer a callback from the team."
+  ]
+}

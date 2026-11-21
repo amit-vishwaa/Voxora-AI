@@ -1,0 +1,97 @@
+{
+  "key": "sales",
+  "label": "Sales and lead generation",
+  "record_type": "lead",
+  "description": "Qualifies inbound and outbound business leads and passes warm leads to the sales team.",
+  "persona": "You are a professional, concise sales development representative.",
+  "greeting": {
+    "en": "Hello, this is {agent} from {company}. Thanks for your interest. How can we help your business?",
+    "hi": "नमस्ते, मैं {company} से {agent} हूँ। हमारी सेवाओं में रुचि के लिए धन्यवाद। आपके व्यवसाय में हम क्या मदद कर सकते हैं?",
+    "gu": "નમસ્તે, હું {company} તરફથી {agent} છું. અમારી સેવાઓમાં રસ દાખવવા બદલ આભાર. તમારા વ્યવસાયમાં અમે કેવી રીતે મદદ કરી શકીએ?"
+  },
+  "fields": [
+    {
+      "name": "name",
+      "label": "Name",
+      "type": "text",
+      "required": true,
+      "ask": {
+        "en": "May I know your name?",
+        "hi": "कृपया अपना नाम बताइए।",
+        "gu": "કૃપા કરીને તમારું નામ જણાવશો?"
+      }
+    },
+    {
+      "name": "company_name",
+      "label": "Company",
+      "type": "text",
+      "required": true,
+      "ask": {
+        "en": "Which company are you calling from?",
+        "hi": "आप किस कंपनी से बात कर रहे हैं?",
+        "gu": "તમે કઈ કંપનીમાંથી વાત કરી રહ્યા છો?"
+      }
+    },
+    {
+      "name": "need",
+      "label": "Requirement",
+      "type": "text",
+      "required": true,
+      "ask": {
+        "en": "What do you need help with?",
+        "hi": "आपको किस चीज़ में मदद चाहिए?",
+        "gu": "તમને કઈ બાબતમાં મદદ જોઈએ છે?"
+      }
+    },
+    {
+      "name": "timeline",
+      "label": "Start timeline",
+      "type": "text",
+      "required": true,
+      "ask": {
+        "en": "When do you want to get started?",
+        "hi": "आप कब तक शुरू करना चाहते हैं?",
+        "gu": "તમે ક્યારે શરૂ કરવા માંગો છો?"
+      }
+    },
+    {
+      "name": "phone",
+      "label": "Phone",
+      "type": "phone",
+      "required": true,
+      "ask": {
+        "en": "Please tell me a phone number we can reach you on.",
+        "hi": "कृपया वह फ़ोन नंबर बताइए जिस पर हम आपसे संपर्क कर सकें।",
+        "gu": "કૃપા કરીને તમારો ફોન નંબર જણાવો જેના પર અમે સંપર્ક કરી શકીએ."
+      }
+    }
+  ],
+  "title_fields": [
+    "name",
+    "company_name"
+  ],
+  "closing": {
+    "en": "Thank you, {name}. Our sales team will reach out with a tailored proposal.",
+    "hi": "धन्यवाद {name}। हमारी सेल्स टीम आपकी ज़रूरत के अनुसार प्रस्ताव के साथ संपर्क करेगी।",
+    "gu": "આભાર {name}. અમારી સેલ્સ ટીમ તમારી જરૂરિયાત મુજબના પ્રસ્તાવ સાથે સંપર્ક કરશે."
+  },
+  "scoring": {
+    "fields": {
+      "name": 5,
+      "company_name": 15,
+      "need": 30,
+      "timeline": 25,
+      "phone": 15
+    },
+    "complete": 10
+  },
+  "escalate": {
+    "en": [],
+    "hi": [],
+    "gu": []
+  },
+  "rules": [
+    "Do not quote prices unless they are in the knowledge base.",
+    "Be honest if you do not know something."
+  ]
+}

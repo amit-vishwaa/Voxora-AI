@@ -1,0 +1,106 @@
+{
+  "key": "support",
+  "label": "Customer support",
+  "record_type": "ticket",
+  "description": "Logs customer problems as tickets with urgency, and escalates angry or complex cases.",
+  "persona": "You are a patient, solution-focused customer support agent.",
+  "greeting": {
+    "en": "Hello, you've reached {company} support. I'm {agent}. Tell me what went wrong and I'll log it right away.",
+    "hi": "नमस्ते, आप {company} सपोर्ट से जुड़े हैं। मैं {agent} हूँ। बताइए क्या समस्या है, इसे अभी दर्ज किया जाएगा।",
+    "gu": "નમસ્તે, તમે {company} સપોર્ટ સાથે જોડાયા છો. હું {agent} છું. શું સમસ્યા છે તે જણાવો, તેને હમણાં નોંધવામાં આવશે."
+  },
+  "fields": [
+    {
+      "name": "name",
+      "label": "Name",
+      "type": "text",
+      "required": true,
+      "ask": {
+        "en": "May I know your name?",
+        "hi": "कृपया अपना नाम बताइए।",
+        "gu": "કૃપા કરીને તમારું નામ જણાવશો?"
+      }
+    },
+    {
+      "name": "reference",
+      "label": "Order or account number",
+      "type": "text",
+      "required": false,
+      "ask": {
+        "en": "Do you have an order or account number?",
+        "hi": "क्या आपके पास ऑर्डर या खाता नंबर है?",
+        "gu": "શું તમારી પાસે ઓર્ડર અથવા ખાતા નંબર છે?"
+      }
+    },
+    {
+      "name": "issue",
+      "label": "Issue",
+      "type": "text",
+      "required": true,
+      "ask": {
+        "en": "Please describe the problem.",
+        "hi": "कृपया समस्या बताइए।",
+        "gu": "કૃપા કરીને સમસ્યા જણાવો."
+      }
+    },
+    {
+      "name": "urgency",
+      "label": "Urgency",
+      "type": "text",
+      "required": true,
+      "ask": {
+        "en": "How urgent is it: low, normal or high?",
+        "hi": "यह कितना ज़रूरी है: कम, सामान्य या ज़्यादा?",
+        "gu": "આ કેટલું તાત્કાલિક છે: ઓછું, સામાન્ય કે વધુ?"
+      }
+    },
+    {
+      "name": "phone",
+      "label": "Phone",
+      "type": "phone",
+      "required": true,
+      "ask": {
+        "en": "Please tell me a phone number we can reach you on.",
+        "hi": "कृपया वह फ़ोन नंबर बताइए जिस पर हम आपसे संपर्क कर सकें।",
+        "gu": "કૃપા કરીને તમારો ફોન નંબર જણાવો જેના પર અમે સંપર્ક કરી શકીએ."
+      }
+    }
+  ],
+  "title_fields": [
+    "name",
+    "issue"
+  ],
+  "closing": {
+    "en": "Thank you, {name}. Your ticket is logged and our team will update you soon.",
+    "hi": "धन्यवाद {name}। आपकी शिकायत दर्ज हो गई है और हमारी टीम जल्द ही आपको जानकारी देगी।",
+    "gu": "આભાર {name}. તમારી ફરિયાદ નોંધાઈ ગઈ છે અને અમારી ટીમ ટૂંક સમયમાં તમને જાણ કરશે."
+  },
+  "scoring": {
+    "fields": {
+      "name": 10,
+      "reference": 15,
+      "issue": 40,
+      "urgency": 20,
+      "phone": 15
+    },
+    "complete": 0
+  },
+  "escalate": {
+    "en": [
+      "refund",
+      "legal"
+    ],
+    "hi": [
+      "रिफंड",
+      "कानूनी"
+    ],
+    "gu": [
+      "રિફંડ",
+      "કાનૂની"
+    ]
+  },
+  "rules": [
+    "Never promise refunds or compensation.",
+    "Escalate abusive or legal threats to a human."
+  ]
+}
